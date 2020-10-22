@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(33, 33, 33);
+  color: white;
+}
+
+a {
+  color: #00b7ff;
+}
