@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // === ROUTING ===
 
-app.use("/", require("./routes/index"));
+app.use("/", require("./routes"));
 app.use("/api/breakdown", require("./routes/api"));
 
 // === ERROR HANDLING ===
