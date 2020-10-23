@@ -1,12 +1,19 @@
 const router = require("express").Router();
-const fs = require("fs");
+const search = require("../../helpers/search");
 
-router.get("/", function (req, res, next) {
+router.get("/", function (_, res) {
+  res.send({
+    status: "error",
+    message: "please provide a lot number",
+  });
+});
+
+router.get("/:search", (req, res) => {
   try {
-    const data = fs.readFileSync("./public/data/11YVCHAR001.json", "utf8");
-    res.send(data);
+    const response = search(req.params.search, ["variety"]);
+    res.json(response);
   } catch (err) {
-    console.log(`Error reading file from disk: ${err}`);
+    res.status(400).send({ status: 404, message: "not found" });
   }
 });
 
