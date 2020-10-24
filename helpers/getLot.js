@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const search = (search, type) => {
+const getLotByCode = (search, type) => {
   // ===BREAKDOWN TYPE===
   const breakdownType = type.length === 1 ? type[0] : `${type[0]} & ${type[1]}`;
 
@@ -26,4 +26,4 @@ const search = (search, type) => {
   };
 };
 
-module.exports = search;
+module.exports = getLotByCode;

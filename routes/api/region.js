@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const search = require("../../helpers/search");
+const getLotByCode = require("../../helpers/getLot");
 
 router.get("/", function (_, res) {
   res.send({
@@ -8,9 +8,9 @@ router.get("/", function (_, res) {
   });
 });
 
-router.get("/:search", (req, res) => {
+router.get("/:lotcode", (req, res) => {
   try {
-    const response = search(req.params.search, ["region"]);
+    const response = getLotByCode(req.params.lotcode, ["region"]);
     res.json(response);
   } catch (err) {
     res.status(400).send({ status: 404, message: "not found" });
