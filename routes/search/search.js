@@ -1,41 +1,79 @@
 const express = require("express");
 const router = express.Router();
 const getData = require("../../helpers/getData");
+const liveSearch = require("../../helpers/liveSearch");
+const search = require("../../helpers/search");
 
-// // returns exact match
-// const findRecord = (data, query) => {
-//   let record = data.filter((db) => {
-//     const records = Object.keys(db);
-//     return records.find((key) => db[key] === query) ? db : false;
-//   });
-//   return record;
-// };
-
-function liveSearch(data, query) {
-  return data.filter((record) => {
-    for (let i in record) {
-      if (record.description !== null) {
-        return record.lotCode.includes(query) ||
-          record.description.includes(query.toUpperCase())
-          ? record
-          : "";
-      }
-    }
-  });
-}
+// ===LIVE SEARCH===
 
 router.get("/?:search", (req, res) => {
-  async function findSearch(search) {
+  async function getLiveSearch(input) {
     try {
       const data = await getData();
-      const response = liveSearch(data, search);
-      //   const response = findRecord(records, search);
+      const response = liveSearch(data, input);
       res.send(response);
     } catch (err) {
       console.log(err);
     }
   }
-  findSearch(req.query.search);
+  getLiveSearch(req.query.search);
+});
+
+// ===SEARCH===
+
+router.get("/search/:search", (req, res) => {
+  async function getSearch(input) {
+    try {
+      const data = await getData();
+      const response = search(data, input);
+      console.log(response);
+      res.send(response);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  getSearch(req.params.search);
 });
 
 module.exports = router;
+
+// const express = require("express");
+// const router = express.Router();
+// const getData = require("../../helpers/getData");
+// const liveSearch = require("../../helpers/liveSearch");
+// const search = require("../../helpers/search");
+
+// async function getSearch(input, type) {
+//   try {
+//     const data = await getData();
+//     let response = "";
+//     switch (type) {
+//       case "liveSearch":
+//         response = liveSearch(data, input);
+//         break;
+//       case "search":
+//         response = search(data, input);
+//         break;
+//     }
+//     return response;
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+
+// // ===LIVE SEARCH===
+
+// router.get("/?:search", (req, res) => {
+//   const response = await getSearch(req.query.search, "liveSearch");
+//   res.send(response);
+// });
+
+// // ===SEARCH===
+
+// router.get("/search/:search", (req, res) => {
+//   const response = getSearch(req.params.search, "search");
+//   console.log(response);
+//   res.send(response);
+// });
+
+// module.exports = router;
