@@ -16,7 +16,7 @@ const getLotByCode = (search, type) => {
           : { [type[0]]: wine[type[0]], [type[1]]: wine[type[1]] },
     };
   });
-  const breakdown = wines.sort(function (a, b) {
+  const breakdown = wines.sort((a, b) => {
     return parseFloat(b.percentage) - parseFloat(a.percentage);
   });
 
