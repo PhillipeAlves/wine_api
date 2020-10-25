@@ -26,7 +26,6 @@ router.get("/search/:search", (req, res) => {
     try {
       const data = await getData();
       const response = search(data, input);
-      console.log(response);
       res.send(response);
     } catch (err) {
       console.log(err);
