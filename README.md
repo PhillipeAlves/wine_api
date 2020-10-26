@@ -6,6 +6,14 @@ This is a simple REST APIs that return some JSON data that describes a breakdown
 
 ---
 
+### For a live demo:
+
+> **_Frontend:_** [Wine Search App](http://wine-search.surge.sh/)
+
+> **_Backend(API):_** [Wine API](https://fast-wave-08855.herokuapp.com/)
+
+---
+
 ## Endpoint
 
 ### _/api/search?{search}_
@@ -31,6 +39,27 @@ This is a simple REST APIs that return some JSON data that describes a breakdown
 ### _/api/breakdown/year-variety/{lotCode}_
 
 > It returns a breakdown of the TOTAL percentage for each unique combination of year and variety.
+
+---
+
+## Example
+
+For example, in /api/breakdown/year/11YVCHAR001 (for the sample data provided in 11YVCHAR001.json) it returns:
+
+```
+{
+    breakDownType: "year",
+    breakdown: [
+        {
+            percentage: "85",
+            key: "2011"
+        },
+        {
+            percentage: "15",
+            key: "2010" }
+    ]
+}
+```
 
 ---
 
