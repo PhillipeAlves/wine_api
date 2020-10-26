@@ -1,4 +1,4 @@
-![Banner](public/images/banner.gif)
+![Banner](/images/banner.gif)
 
 ## About
 
