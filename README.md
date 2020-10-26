@@ -1,4 +1,4 @@
-![Banner](/images/banner.gif)
+# WINE API
 
 ## About
 
