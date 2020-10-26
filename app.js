@@ -10,6 +10,7 @@ const app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
+// === SET UP ===
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -26,13 +27,13 @@ app.use("/api", require("./routes/search/search"));
 
 // === CATCHES 404 AND FORWARDS TO ERROR HANDLER ===
 
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   next(createError(404));
 });
 
 // === ERROR HANDLER ===
 
-app.use(function (err, req, res, next) {
+app.use((err, req, res) => {
   // === SETS LOCALS, ONLY PROVIDING ERROR IN DEVELOPMENT ===
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};

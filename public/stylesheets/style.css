@@ -3,10 +3,11 @@
 }
 body {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(33, 33, 33);
-  color: white;
-}
-
-a {
-  color: #00b7ff;
+  background-image: url("../images/wine-pattern.jpg");
+  color: black;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 7rem;
 }

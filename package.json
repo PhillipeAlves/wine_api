@@ -1,10 +1,10 @@
 {
-  "name": "vintrace-api",
+  "name": "wine_api",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "DEBUG=vintrace-api:* nodemon ./bin/www -e js"
+    "dev": "DEBUG=wine_api:* nodemon ./bin/www -e js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

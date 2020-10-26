@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const getLotByCode = require("../../helpers/getLot");
 
-router.get("/", function (_, res) {
+router.get("/", (_, res) => {
   res.send({
     status: "error",
     message: "please provide a lot number",
