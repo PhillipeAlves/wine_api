@@ -16,7 +16,7 @@ This is a simple REST APIs that return some JSON data that describes a breakdown
 
 ## Endpoint
 
-### _/api/search?search={search}_
+### _/api/search?search={lotCode}_
 
 > It returns the wine details for a specific search with all the relevant details of the wine. It takes the lot code of the wine as a parameter
 
