@@ -8,9 +8,9 @@ This is a simple REST APIs that return some JSON data that describes a breakdown
 
 ### For a live demo:
 
-> **_Frontend:_** [Wine Search App](http://wine-search.surge.sh/)
+> **_Frontend:_** [Wine Search App](http://wine-search.surge.sh/) / [github](https://github.com/PhillipeAlves/wine_react)
 
-> **_Backend(API):_** [Wine API](https://fast-wave-08855.herokuapp.com/)
+> **_Backend(API):_** [Wine API](https://fast-wave-08855.herokuapp.com/) / [github](https://github.com/PhillipeAlves/wine_api)
 
 ---
 
@@ -44,7 +44,7 @@ This is a simple REST APIs that return some JSON data that describes a breakdown
 
 ## Example
 
-For example, in /api/breakdown/year/11YVCHAR001 (for the sample data provided in 11YVCHAR001.json) it returns:
+**_/api/breakdown/year/11YVCHAR001_**
 
 ```
 {
@@ -59,6 +59,47 @@ For example, in /api/breakdown/year/11YVCHAR001 (for the sample data provided in
             key: "2010" }
     ]
 }
+```
+
+**_/api/search/11YVCHAR001_**
+
+```
+[
+    {
+        "lotCode": "11YVCHAR001",
+        "volume": 1000,
+        "description": "2011 Yarra Valley Chardonnay",
+        "tankCode": "T25-01",
+        "productState": "Ready for bottling",
+        "ownerName": "YV Wines Pty Ltd",
+        "components": [
+            {
+                "percentage": 5,
+                "year": 2011,
+                "variety": "Pinot Noir",
+                "region": "Mornington"
+            },
+            {
+                "percentage": 80,
+                "year": 2011,
+                "variety": "Chardonnay",
+                "region": "Yarra Valley"
+            },
+            {
+                "percentage": 5,
+                "year": 2010,
+                "variety": "Pinot Noir",
+                "region": "Macedon"
+            },
+            {
+                "percentage": 10,
+                "year": 2010,
+                "variety": "Chardonnay",
+                "region": "Macedon"
+            }
+        ]
+    }
+]
 ```
 
 ---
