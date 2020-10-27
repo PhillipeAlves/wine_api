@@ -42,7 +42,7 @@ This is a simple REST APIs that returns data in JSON format. It describes a brea
 
 ---
 
-## Example
+## Examples
 
 **_/api/breakdown/year/11YVCHAR001_**
 
