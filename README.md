@@ -2,7 +2,7 @@
 
 ## About
 
-This is a simple REST APIs that return some JSON data that describes a breakdown of the TOTAL percentage of year, variety, region and year + variety information for a specific wine, ordered from highest percentage to lowest.
+This is a simple REST APIs that returns data in JSON format. It describes a breakdown of the TOTAL percentage of year, variety, region and year + variety information for a specific wine, ordered from highest percentage to lowest.
 
 ---
 
