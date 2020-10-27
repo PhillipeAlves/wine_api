@@ -14,11 +14,11 @@ This is a simple REST APIs that returns data in JSON format. It describes a brea
 
 ---
 
-## Endpoint
+## Endpoints
 
 ### _/api/search?search={lotCode}_
 
-> It returns the wine details for a specific search with all the relevant details of the wine. It takes the lot code of the wine as a parameter
+> It returns the wine details based on a specific search with all the relevant information of the wine. It takes the lot code of the wine as a parameter
 
 ### _/api/search/{lotCode||description}_
 
