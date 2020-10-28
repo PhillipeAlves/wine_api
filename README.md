@@ -26,19 +26,19 @@ This is a simple REST APIs that returns data in JSON format. It describes a brea
 
 ### _/api/breakdown/year/{lotCode}_
 
-> It returns a breakdown of the TOTAL percentage for each unique year value.
+> It returns a breakdown of the total percentage for each unique year value.
 
 ### _/api/breakdown/variety/{lotCode}_
 
-> It returns a breakdown of the TOTAL percentage for each unique variety value.
+> It returns a breakdown of the total percentage for each unique variety value.
 
 ### _/api/breakdown/region/{lotCode}_
 
-> It returns a breakdown of the TOTAL percentage for each unique region value.
+> It returns a breakdown of the total percentage for each unique region value.
 
 ### _/api/breakdown/year-variety/{lotCode}_
 
-> It returns a breakdown of the TOTAL percentage for each unique combination of year and variety.
+> It returns a breakdown of the total percentage for each unique combination of year and variety.
 
 ---
 
