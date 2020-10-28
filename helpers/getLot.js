@@ -19,7 +19,7 @@ const getLotByCode = (search, type) => {
     };
   });
 
-  // ===GET UNIQUE KEYS===
+  // ===GET SEARCH TYPE===
   const isSigleValue = wines[0].key.year && wines[0].key.variety ? false : true
 
   // ===CREATE ARRAY WITH RESULTS===
