@@ -20,7 +20,7 @@ const getLotByCode = (search, type) => {
   });
 
   // ===GET SEARCH TYPE===
-  const isSigleValue = wines[0].key.year && wines[0].key.variety ? false : true
+  const isSigleValue = type.length === 1 ? true : false
 
   // ===CREATE ARRAY WITH RESULTS===
   const getResults = () => {
