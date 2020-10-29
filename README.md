@@ -20,25 +20,37 @@ This is a simple REST APIs that returns data in JSON format. It describes a brea
 
 > It returns the wine details based on a specific search with all the relevant information of the wine. It takes the lot code of the wine as a parameter
 
+[Sample - Specific Search](https://fast-wave-08855.herokuapp.com/api/search?search=11YVCHAR002)
+
 ### _/api/search/{lotCode||description}_
 
 > It supports the searching for wines by the lot code or description of different lists.
+
+[Sample - Live Search](https://fast-wave-08855.herokuapp.com/api/search/11YVCHAR001)
 
 ### _/api/breakdown/year/{lotCode}_
 
 > It returns a breakdown of the total percentage for each unique year value.
 
+[Sample - Year](https://fast-wave-08855.herokuapp.com/api/breakdown/year/15MPPN002-VK)
+
 ### _/api/breakdown/variety/{lotCode}_
 
 > It returns a breakdown of the total percentage for each unique variety value.
+
+[Sample - Variety](https://fast-wave-08855.herokuapp.com/api/breakdown/variety/11YVCHAR002)
 
 ### _/api/breakdown/region/{lotCode}_
 
 > It returns a breakdown of the total percentage for each unique region value.
 
+[Sample - Region](https://fast-wave-08855.herokuapp.com/api/breakdown/region/15MPPN002-VK)
+
 ### _/api/breakdown/year-variety/{lotCode}_
 
 > It returns a breakdown of the total percentage for each unique combination of year and variety.
+
+[Sample - Year & Variety](https://fast-wave-08855.herokuapp.com/api/breakdown/year-variety/15MPPN002-VK)
 
 ---
 
