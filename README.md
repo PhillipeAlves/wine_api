@@ -20,13 +20,13 @@ This is a simple REST APIs that returns data in JSON format. It describes a brea
 
 > It returns the wine details based on a specific search with all the relevant information of the wine. It takes the lot code of the wine as a parameter
 
-[Sample - Specific Search](https://fast-wave-08855.herokuapp.com/api/search?search=y)
+[Sample - Specific Search](https://fast-wave-08855.herokuapp.com/api/search/11YVCHAR001)
 
 ### _/api/search?search={lotCode}_
 
 > It supports the searching for wines by the lot code or description of different lists.
 
-[Sample - Live Search](https://fast-wave-08855.herokuapp.com/api/search?search=11YVCHAR002)
+[Sample - Live Search](https://fast-wave-08855.herokuapp.com/api/search?search=y)
 
 ### _/api/breakdown/year/{lotCode}_
 
