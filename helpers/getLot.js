@@ -23,7 +23,7 @@ const getDataFromFiles = (search, type) => {
     return { wines, breakdownType }
 }
 
-const getResults = (wines, type) => {
+const getBreakdown = (wines, type) => {
   const isSingleValue = type.length === 1 ? true : false
   let results = [];
   let match;
@@ -54,7 +54,7 @@ const getLotByCode = (search, type) => {
 
   const { wines, breakdownType } = getDataFromFiles(search, type)
 
-  const breakdown = getResults(wines, type)
+  const breakdown = getBreakdown(wines, type)
 
   return {
     breakDownType: breakdownType,
