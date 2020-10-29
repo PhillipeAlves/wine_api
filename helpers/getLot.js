@@ -20,14 +20,14 @@ const getLotByCode = (search, type) => {
   });
 
   // ===GET SEARCH TYPE===
-  const isSigleValue = type.length === 1 ? true : false
+  const isSingleValue = type.length === 1 ? true : false
 
   // ===CREATE ARRAY WITH RESULTS===
   const getResults = () => {
     let results = [];
     let match;
     wines.filter((wine) => {
-      if (isSigleValue) {
+      if (isSingleValue) {
         match = results.findIndex(result => (result.key === wine.key));
         if (match <= -1) {
           results.push(wine);
