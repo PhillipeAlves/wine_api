@@ -1,14 +1,11 @@
 const fs = require("fs");
 
 const getDataFromFiles = (search, type) => {
-
     // ===BREAKDOWN TYPE===
     const breakdownType = type.length === 1 ? type[0] : `${type[0]} & ${type[1]}`;
-
     // ===BREAKDOWN DATA===
     const data = fs.readFileSync(`./public/data/${search}.json`, "utf8");
     const parsedData = JSON.parse(data);
-    
     // ===CREATE OBJECT FROM DATA===
     const wines = parsedData.components.map((wine) => {
       return {
@@ -19,15 +16,17 @@ const getDataFromFiles = (search, type) => {
             : { [type[0]]: wine[type[0]], [type[1]]: wine[type[1]] },
       };
     });
-
     return { wines, breakdownType }
 }
 
 const getBreakdown = (wines, type) => {
+  // ===SEARCH TYPE===
   const isSingleValue = type.length === 1 ? true : false
+  // ===CREATE ARRAY WITH RESULTS===
   let results = [];
   let match;
   wines.forEach( wine => {
+    // ===SINGLE SEARCH===
     if (isSingleValue) {
       match = results.findIndex(result => (result.key === wine.key));
       if (match <= -1) {
@@ -35,6 +34,7 @@ const getBreakdown = (wines, type) => {
       } else {
         results.forEach(result => (result.key === wine.key) ? result.percentage += wine.percentage : '')
       }
+    // ===MULTIPLE SEARCH===
     } else {
       match = results.findIndex(result => (result.key.year === wine.key.year && result.key.variety === wine.key.variety));
       if (match <= -1) {
@@ -44,18 +44,15 @@ const getBreakdown = (wines, type) => {
       }
     }    
   })
-   // ===SORT FROM HIGHEST TO LOWEST===
+  // ===SORT FROM HIGHEST TO LOWEST===
   return results.sort((a, b) => {
     return parseFloat(b.percentage) - parseFloat(a.percentage);
   });
 }
 
 const getLotByCode = (search, type) => {
-
   const { wines, breakdownType } = getDataFromFiles(search, type)
-
   const breakdown = getBreakdown(wines, type)
-
   return {
     breakDownType: breakdownType,
     breakdown: breakdown,
